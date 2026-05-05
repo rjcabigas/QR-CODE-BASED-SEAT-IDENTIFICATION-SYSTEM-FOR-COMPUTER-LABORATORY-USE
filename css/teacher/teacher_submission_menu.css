@@ -1,0 +1,156 @@
+#dotMenu{
+position:absolute;
+top:30px;
+right:0;
+width:220px;
+background:#fff;
+border-radius:12px;
+padding:8px;
+display:none;
+z-index:200;
+}
+
+#dotMenu div{
+padding:10px 14px;
+border-radius:8px;
+cursor:pointer;
+font-size:14px;
+color:#374151;
+display:flex;
+align-items:center;
+gap:20px;
+}
+
+#dotMenu div img{
+width:20px;
+height:20px;
+}
+
+#dotMenu div:hover{
+background:#eaf4ff;
+}
+
+#dotMenu div:last-child{
+color:#dc2626;
+}
+
+#dotMenu div:last-child:hover{
+background:#fee2e2;
+}
+
+.menu-label{
+font-size:11px !important;        
+color:#9ca3af !important;
+padding:6px 14px 4px;
+pointer-events:none; 
+cursor:default;      
+user-select:none;    
+}
+
+.menu-label.other{
+margin-top:6px;
+}
+
+#sectionBtn{
+display:flex;
+position: relative;
+align-items:center;
+gap:20px;
+}
+
+#sectionBtn .arrow{
+margin-left:auto;
+width:16px;
+height:16px;
+opacity:0.7;
+}
+
+#sectionPanel{
+position: absolute;
+top: 145px;   
+right: 240px;
+width: 150px;
+background: #fff;
+border-radius: 12px;
+padding: 12px;
+display: none;
+z-index: 1000;
+}
+
+.section-header{
+font-size: 11px;
+color: #777;
+margin-bottom: 8px;
+}
+
+.section-item{
+padding: 10px 14px; 
+border-radius: 8px;
+cursor: pointer;
+font-size: 14px;
+color: #374151; 
+display: flex;
+align-items: center;
+}
+
+.section-item:hover{
+background: #f2f2f2;
+}
+
+#sectionPanel {
+transition: opacity 0.2s ease;
+}
+
+#sectionList{
+max-height: 220px;  
+overflow-y: auto;
+overflow-x: hidden;
+}
+
+.section-item.active {
+background: #dbeafe;
+}
+
+.section-item.active:hover {
+background: #c7ddff;
+}
+
+.deadline-box{
+display: flex;
+align-items: center;
+gap: 10px;
+padding: 12px;
+margin-top: 15px;
+border-top: 1px solid #ddd;
+}
+
+.deadline-box img{
+width: 24px;
+height: 24px;
+}
+
+.deadline-text{
+display: flex;
+flex-direction: column;
+}
+
+.deadline-label{
+font-size: 12px;
+color: #888;
+}
+
+.deadline-date{
+font-size: 14px;
+font-weight: 500;
+}
+
+#deadlineBtn.disabled{
+opacity: 0.4;
+pointer-events: none;
+}
+
+#createBtn.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: not-allowed;
+}

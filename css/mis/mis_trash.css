@@ -1,0 +1,278 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #eaf3fb;
+}
+
+.main-content {
+    margin-left: 240px;
+    padding: 30px;
+    min-height: 100vh;
+}
+
+.trash-topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: -10px;
+}
+
+.sort-wrapper {
+    position: relative;
+}
+
+.sort-box {
+    background: #ffffff;
+    border: 1.5px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.sort-box img {
+    width: 14px;
+    transition: transform 0.2s ease;
+}
+
+.sort-box.active img {
+    transform: rotate(90deg);
+}
+
+.sort-menu {
+    position: absolute;
+    top: 46px;
+    left: 0;
+    width: 180px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    padding: 10px 0;
+    display: none;
+    z-index: 50;
+}
+
+.sort-menu.show {
+    display: block;
+}
+
+.sort-menu div {
+    padding: 10px 16px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.sort-menu div:hover {
+    background: #f1f5f9;
+}
+
+.dot-wrapper {
+    position: relative;
+}
+
+.dot-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.dot-btn img {
+    width: 18px;
+}
+
+.dot-menu {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    width: 220px;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 10px 0;
+    display: none;
+    z-index: 50;
+    border: 2.5px solid black;
+    margin-top: -10px;
+}
+
+.dot-menu.show {
+    display: block;
+}
+
+.dot-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.dot-item img {
+    width: 18px;
+}
+
+.dot-item:hover {
+    background: #f1f5f9;
+}
+
+.dot-item.danger {
+    color: #dc2626;
+}
+
+.trash-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 120px;
+    text-align: center;
+}
+
+.trash-empty img {
+    width: 260px;
+    margin-bottom: 20px;
+}
+
+.trash-empty h2 {
+    font-size: 18px;
+    font-weight: 500;
+    color: #111827;
+    margin-bottom: 6px;
+}
+
+.trash-empty p {
+    font-size: 13px;
+    color: #9ca3af;
+}
+
+.folder-grid {
+    margin-top: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    align-items: flex-start;
+}
+
+.folder-item {
+    width: 227px;
+    height: 56px;
+    background: #ffffff;
+    border: 1.5px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 0 18px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    position: relative;
+    user-select: none;
+}
+
+.folder-item:hover {
+    background: #f3f8ff;
+    border-color: #93c5fd;
+}
+
+.folder-item.selected {
+    background: #eef5ff;
+    border-color: #3b82f6;
+}
+
+.folder-icon {
+    width: 26px;
+    height: 26px;
+}
+
+.folder-name {
+    font-size: 13px;
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.folder-menu-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.folder-menu-btn img {
+    width: 16px;
+}
+
+.folder-menu {
+    position: absolute;
+    top: 54px;
+    right: 10px;
+    width: 180px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0,0,0,.15);
+    padding: 6px;
+    display: none;
+    z-index: 50;
+}
+
+.folder-menu.show {
+    display: block;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    width: 100%;
+    text-align: left;
+    border-radius: 8px;
+    color: #111827;
+}
+
+.menu-item img {
+    width: 18px;
+}
+
+.menu-item:hover {
+    background: #f3f4f6;
+}
+
+.menu-item.danger {
+    color: #dc2626;
+}
+
+.menu-item.danger:hover {
+    background: #fee2e2;
+}
+
+.folder-menu .menu-item:first-child {
+    margin-bottom: 6px;
+    position: relative;
+}
+
+.folder-menu .menu-item:first-child::after {
+    content: "";
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    bottom: -4px;
+    height: 1px;
+    background: #e5e7eb;
+}
+
+@media (max-width: 1024px) {
+    .main-content {
+        margin-left: 0;
+    }
+}
