@@ -1,0 +1,303 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins', sans-serif;
+-webkit-tap-highlight-color:transparent;
+}
+
+body{
+background:#eaf3fb;
+}
+
+.evaluation-header{
+background:#ffffff;
+padding:15px;
+position:relative;
+display:flex;
+align-items:center;
+justify-content:space-between;
+margin-bottom:5px;
+}
+
+.evaluation-header h3{
+font-size:16px;
+font-weight:600;
+margin-left:35px;
+}
+
+.back-btn{
+position:absolute;
+left:15px;
+top:50%;
+transform:translateY(-50%);
+width:18px;
+cursor:pointer;
+}
+
+.container{
+max-width:420px;
+margin:auto;
+padding:8px 15px;
+}
+
+.eval-wrapper{
+height:75vh;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
+}
+
+.eval-wrapper img{
+width:170px;
+margin-bottom:15px;
+}
+
+.eval-wrapper h4{
+font-size:14px;
+font-weight:500;
+margin-bottom:6px;
+}
+
+.eval-wrapper p{
+font-size:11px;
+color:#777;
+max-width:260px;
+line-height:1.5;
+}
+
+img,a,div{
+-webkit-user-select:none;
+user-select:none;
+}
+
+img{
+-webkit-touch-callout:none;
+}
+
+.teacher-card{
+background:#ffffff;
+padding:12px 14px;
+border-radius:10px;
+display:flex;
+align-items:flex-start;
+justify-content:space-between;
+margin-bottom:12px;
+box-shadow:0 2px 6px rgba(0,0,0,0.05);
+position:relative;
+}
+
+.teacher-left{
+display:flex;
+align-items:flex-start;
+gap:20px;
+}
+
+.profile-icon{
+width:40px;
+height:40px;
+border-radius:50%;
+margin-top:2px;
+}
+
+.teacher-info h4{
+font-size:13px;
+font-weight:600;
+margin-bottom:2px;
+}
+
+.teacher-info p{
+font-size:11px;
+color:#666;
+}
+
+.comment-btn{
+background:#1bb35c;
+border:none;
+color:#fff;
+font-size:10px;
+padding:6px 12px;
+border-radius:6px;
+display:flex;
+align-items:center;
+gap:6px;
+cursor:pointer;
+margin-top:3px;
+}
+
+.comment-btn:active{
+transform:scale(0.95);
+}
+
+.comment-btn img{
+width:20px;
+}
+
+.evaluation-panel{
+display:none;
+background:#ffffff;
+padding:15px;
+border-radius:12px;
+position:absolute;
+top:70px;
+left:0;
+width:100%;
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
+z-index:10;
+}
+
+.eval-header{
+display:flex;
+align-items:center;
+justify-content:space-between;
+margin-bottom:12px;
+}
+
+.eval-header h4{
+font-size:13px;
+font-weight:600;
+}
+
+.toggle-icon{
+width:34px;
+}
+
+.evaluation-panel textarea{
+width:100%;
+min-height:70px;
+max-height:150px;
+border:1px solid #ccc;
+border-radius:10px;
+padding:12px 10px;
+font-size:11px;
+resize:none;
+outline:none;
+font-family:'Poppins',sans-serif;
+overflow-y:auto;
+line-height:1.4;
+background-clip:padding-box;
+}
+
+.anonymous-label{
+display:none;
+font-size:11px;
+color:#666;
+margin-bottom:6px;
+}
+
+.toggle-switch{
+width:30px;
+height:16px;
+background:#ccc;
+border-radius:20px;
+position:relative;
+cursor:pointer;
+transition:0.3s;
+}
+
+.toggle-circle{
+width:12px;
+height:12px;
+background:#fff;
+border-radius:50%;
+position:absolute;
+top:2px;
+left:2px;
+transition:0.3s;
+}
+
+.toggle-switch.active{
+background:#1e73be;
+}
+
+.toggle-switch.active .toggle-circle{
+left:16px;
+}
+
+.submit-area{
+display:flex;
+justify-content:flex-end;
+margin-top:12px;
+}
+
+.submit-btn{
+background:#1bb35c;
+color:#fff;
+border:none;
+padding:8px 18px;
+border-radius:8px;
+font-size:11px;
+cursor:pointer;
+}
+
+.submit-btn:active{
+transform:scale(0.95);
+}
+
+#toast{
+position: fixed;
+top: 20px;
+left: 50%;
+transform: translateX(-50%);
+background: #00B050;
+color: #fff;
+padding: 12px 20px;
+border-radius: 8px;
+font-size: 11px;
+text-align: center;
+white-space: nowrap;
+opacity: 0;
+transition: opacity 0.4s ease;
+z-index: 9999;
+}
+
+#toast.show{
+opacity: 1;
+}
+
+.evaluation-panel textarea::-webkit-scrollbar{
+width:4px;
+}
+
+.evaluation-panel textarea::-webkit-scrollbar-track{
+margin:8px 0; /* ito yung space sa taas at baba */
+background:transparent;
+border-radius:10px;
+}
+
+.evaluation-panel textarea::-webkit-scrollbar-thumb{
+background:#c7c7c7;
+border-radius:10px;
+}
+
+.evaluation-panel textarea::-webkit-scrollbar-thumb:active{
+background:#a8a8a8;
+}
+
+#limitToast{
+position:fixed;
+top:20px; /* 👈 nasa taas na */
+left:50%;
+transform:translateX(-50%);
+background:#ef4444;
+color:#fff;
+padding:10px 20px;
+border-radius:8px;
+font-size:10px;
+opacity:0;
+pointer-events:none;
+transition:0.3s;
+z-index:999;
+}
+
+#limitToast.show{
+opacity:1;
+}
+
+.comment-btn:disabled{
+    background:#9ca3af;
+    cursor:not-allowed;
+    opacity:0.6;
+}

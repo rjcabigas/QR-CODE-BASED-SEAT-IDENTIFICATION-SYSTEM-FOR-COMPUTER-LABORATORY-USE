@@ -1,0 +1,211 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 240px;
+    height: 100vh;
+    background: #ffffff;
+    padding: 25px 20px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #e5e7eb;
+    z-index: 100;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.logo-section img {
+    width: 42px;
+}
+
+.logo-text {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.menu-title {
+    font-size: 12px;
+    font-weight: 600;
+    color: #0aad49;
+    margin: 10px 0 18px;
+}
+
+.menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-list li {
+    margin-bottom: 12px;
+    position: relative;
+}
+
+.menu-list li a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 12px;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: #374151;
+    border-radius: 14px;
+    border: 1.5px solid transparent;
+    transform: translateX(0);
+    transition: border 0.15s ease, transform 0.18s ease, color 0.15s ease;
+}
+
+.menu-list li a img {
+    width: 20px;
+}
+
+.menu-list li a:hover {
+    border: 1.5px solid #e2e2e2;
+    transform: translateX(4px);
+}
+
+.menu-list li.active a {
+    border: 1.5px solid #4fc3f7;
+    color: #0284c7;
+    transform: translateX(0);
+}
+
+.menu-list li.active::before {
+    content: "";
+    position: absolute;
+    left: -10px;
+    top: 12%;
+    height: 76%;
+    width: 3px;
+    background-color: #4fc3f7;
+    border-radius: 6px;
+}
+
+.sidebar-logout {
+    margin-top: auto;
+}
+
+.sidebar-logout a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 13px;
+    padding: 12px 16px;
+    text-decoration: none;
+    border-radius: 14px;
+    cursor: pointer;
+    border: 1.5px solid transparent;
+    color: #374151;
+    transform: translateX(0);
+    transition: border 0.15s ease, transform 0.18s ease, color 0.15s ease;
+}
+
+.sidebar-logout img {
+    width: 20px;
+}
+
+.sidebar-logout a:hover {
+    border: 1.5px solid #e2e2e2;
+    transform: translateX(4px);
+}
+
+.sidebar-logout a.active {
+    border: 1.5px solid #f87171;
+    color: #dc2626;
+    transform: translateX(0);
+}
+
+.logout-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.15);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.logout-box{
+    background:#fff;
+    width:320px;
+    border-radius:18px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.2);
+    font-family:'Poppins', sans-serif;
+    overflow:hidden;
+}
+
+.logout-box h4{
+    margin:0;
+    padding:20px 22px 6px;
+    font-size:16px;
+    font-weight:600;
+    color:#222;
+}
+
+.logout-box p{
+    margin:0;
+    padding:0 22px 18px;
+    font-size:13px;
+    color:#666;
+}
+
+.logout-actions{
+    display:flex;
+    justify-content:flex-end;
+    gap:14px;
+    padding:14px 22px;
+    border-top:1px solid #ddd;
+}
+
+.logout-actions button{
+    background:none;
+    border:none;
+    font-size:13px;
+    color:#333;
+    cursor:pointer;
+}
+
+.logout-actions a{
+    background:#1da1d2;
+    color:#fff;
+    padding:8px 18px;
+    border-radius:8px;
+    font-size:12px;
+    text-decoration:none;
+    font-weight:500;
+}
+
+.sidebar:has(.sidebar-logout a.active) .menu-list li.active a {
+    border-color: transparent;
+    color: #374151;
+}
+
+.sidebar:has(.sidebar-logout a.active) .menu-list li.active::before {
+    display: none;
+}
+
+.logout-actions button:active,
+.logout-actions a:active {
+    transform: scale(0.96);
+}
+
+.sidebar,
+.sidebar *{
+    user-select:none;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+}
